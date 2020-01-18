@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+#define ll long long int
+int main() {
+
+    vector <ll> a;
+    ll t;
+    a.push_back(1);
+    a.push_back(1);
+    //cout<<a[0] << a[1];
+    cin>>t;
+    for(ll i = 0; i < t; i++) {
+        ll b;
+        cin>>b;
+        if(a.size() -1 >= b ){
+            cout<<a[b ] << endl;
+            continue;
+           
+        }
+        ll c = a.size() - 1;
+        for(ll j = c + 1; j < b + 1; j++) {
+            ll x = j * (a[j - 1]);
+            x %= 1000000007;
+            a.push_back(x);
+        }
+        cout<<a[b ]<<endl;
+       
+    }
+
+        return 0;
+}
